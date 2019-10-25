@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     case 'L': cursor.move_left(); break;
                     case 'U': cursor.move_up(); break;
                     case 'D': cursor.move_down(); break;
-                    case 'X': cursor.colorize({r: 200, g:0, b:0}); break;
+                    case 'X':
+                        cursor.change_color({r:200, g:0, b:0});
+                        cursor.colorize();
+                        break;
+                    case 'A':
+                        cursor.change_color({r:0, g:200, b:0});
+                        cursor.colorize();
+                        break;
+                    case 'B':
+                        cursor.change_color({r:0, g:0, b:200});
+                        cursor.colorize();
+                        break;
                 }
             });
         }).catch((error) => {
